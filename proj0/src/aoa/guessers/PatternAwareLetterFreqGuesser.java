@@ -23,6 +23,9 @@ public class PatternAwareLetterFreqGuesser implements Guesser {
         for(int i = 0;i < guesses.size();i++){
             map.remove(guesses.get(i));
         }
+        if(map.isEmpty()){
+            return '?';
+        }
         char[] letter = new char[map.size()];
         int[] order = new int[map.size()];
         int m = 0;
