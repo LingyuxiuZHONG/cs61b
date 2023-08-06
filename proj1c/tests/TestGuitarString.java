@@ -1,5 +1,7 @@
 /* Imports the required audio library from the
  * edu.princeton.cs.algs4 package. */
+import deque.Deque;
+import deque.LinkedListDeque;
 import edu.princeton.cs.algs4.StdAudio;
 import org.junit.jupiter.api.Test;
 import gh2.GuitarString;
@@ -81,5 +83,7 @@ public class TestGuitarString  {
         String errorMsg = "Wrong tic value. Try running the testTic method in TestGuitarString.java";
         assertWithMessage(errorMsg).that(s5).isWithin(0.001).of(expected);
     }
+
+
 }
 
