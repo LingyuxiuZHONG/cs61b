@@ -16,15 +16,6 @@ public class LinkedListDeque<T> implements Deque<T> {
         Node(T item){
             this.item = item;
         }
-        public T getItem(){
-            return item;
-        }
-        public Node<T> getprev(){
-            return prev;
-        }
-        public Node<T> getnext(){
-            return next;
-        }
     }
     public LinkedListDeque() {
         sentinel = new Node<>(null);
@@ -119,6 +110,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         }
         sentinel.next = first.next;
         first.next.prev = sentinel;
+        size--;
         return first.item;
     }
 
@@ -135,6 +127,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         }
         sentinel.prev = last.prev;
         last.prev.next = sentinel;
+        size--;
         return last.item;
     }
 

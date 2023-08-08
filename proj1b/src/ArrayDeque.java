@@ -100,6 +100,7 @@ public class ArrayDeque<T> implements Deque<T>{
         if(items[a] != null){
             nextFirst = a;
         }
+        size--;
         return items[a];
     }
 
@@ -114,6 +115,7 @@ public class ArrayDeque<T> implements Deque<T>{
         if(items[a] != null){
             nextLast = a;
         }
+        size--;
         return items[a];
     }
 
