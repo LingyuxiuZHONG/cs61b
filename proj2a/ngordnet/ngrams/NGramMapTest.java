@@ -2,6 +2,7 @@ package ngordnet.ngrams;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +14,7 @@ import static com.google.common.truth.Truth.assertThat;
  */
 public class NGramMapTest {
     @Test
-    public void testCountHistory() {
+    public void testCountHistory() throws IOException {
         NGramMap ngm = new NGramMap("./data/ngrams/very_short.csv", "./data/ngrams/total_counts.csv");
         List<Integer> expectedYears = new ArrayList<>
                 (Arrays.asList(2005, 2006, 2007, 2008));
@@ -42,7 +43,7 @@ public class NGramMapTest {
     }
 
     @Test
-    public void testOnLargeFile() {
+    public void testOnLargeFile() throws IOException {
         // creates an NGramMap from a large dataset
         NGramMap ngm = new NGramMap("./data/ngrams/top_14377_words.csv",
                 "./data/ngrams/total_counts.csv");
