@@ -23,7 +23,7 @@ public class RandomWorld implements World{
 
     @Override
     public void create() {
-        int times = rd.nextInt(30);
+        int times = rd.nextInt(1,5);
         disjointSet = new DisjointSet(times);
         rooms = new Room[times];
         for(int i = 0;i < times;i++){
@@ -34,6 +34,20 @@ public class RandomWorld implements World{
                 createHallway(i,i+1);
             }
         }
+        coinPut();
+    }
+    private void coinPut(){
+        int times = rd.nextInt(1,10);
+        for(int i = 0;i < times;i++){
+            int x = rd.nextInt(width);
+            int y = rd.nextInt(height);
+            do {
+                x = rd.nextInt(width);
+                y = rd.nextInt(height);
+            }while (tiles[x][y] != Tileset.FLOOR);
+            tiles[x][y] = Tileset.COIN;
+        }
+
     }
     @Override
     public void createRoom(int index) {
